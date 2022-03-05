@@ -1,0 +1,20 @@
+{
+  "name": "thread_pool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.21"
+  },
+  "dependencies": {
+    "node-oop-worker-pool": "^1.0.0"
+  }
+}
