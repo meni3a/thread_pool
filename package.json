@@ -19,6 +19,6 @@
     "@types/node": "^17.0.21"
   },
   "dependencies": {
-    "node-oop-worker-pool": "^1.0.28"
+    "node-oop-worker-pool": "^1.0.30"
   }
 }
