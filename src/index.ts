@@ -1,18 +1,22 @@
-import path from "path";
+
+import { WorkerPool } from "node-oop-worker-pool";
 import ComputeService from "./computeService";
-import WorkersPool from "node-oop-worker-pool/dist/lib/WorkersPool";
 
-(async () => {
-    console.log("start")
-    const promises = [];
-    for (const data of Array.from(Array(10).keys())) {
-        const task = WorkersPool.Task(data, ComputeService.path);
-        promises.push(task);
+class MainService{
+
+    async handleCPUIntensiveTask(dataToProcess: number[]){ 
+        
+        // wait all workers to finish
+        const result = await Promise.all(dataToProcess.map((data: number)=>{
+            return WorkerPool.runTask(data, ComputeService.path);
+        }));
+    
+        console.log("finish all tasks", result);
+    
+        WorkerPool.destroy();
     }
-    await Promise.all(promises);
-    WorkersPool.destroy();
-    console.log("finish all")
-})();
+	
+}
 
-
-
+const mainService = new MainService();
+mainService.handleCPUIntensiveTask([1,2,3,4,5,6,7,8,9,10,11]);

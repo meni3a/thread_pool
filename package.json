@@ -1,7 +1,11 @@
 {
   "name": "thread_pool",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Worker Pool for Node.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meni3a/node-oop-worker-pool"
+  },
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -15,6 +19,6 @@
     "@types/node": "^17.0.21"
   },
   "dependencies": {
-    "node-oop-worker-pool": "^1.0.0"
+    "node-oop-worker-pool": "^1.0.28"
   }
 }
